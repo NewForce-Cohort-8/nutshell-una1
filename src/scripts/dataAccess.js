@@ -11,7 +11,7 @@ const applicationState = {
 //API holds the url for the database
 const API = "http://localhost:8088"
 
-//added all this crap IT COULD BE WRONG
+
 const mainContainer = document.querySelector("#container")
 
 

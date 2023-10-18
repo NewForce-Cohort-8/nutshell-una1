@@ -1,4 +1,4 @@
-import {Nutshell} from "../Nutshell.js"
+// import {Nutshell} from "../Nutshell.js"
 import {nutshellRender} from "../main.js"
 
 const contentTarget = document.querySelector(".auth--login")
