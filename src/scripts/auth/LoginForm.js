@@ -1,4 +1,6 @@
 import {Nutshell} from "../Nutshell.js"
+import { nutshellRender } from "../main.js"
+
 const contentTarget = document.querySelector(".auth--login")
 const eventHub = document.querySelector(".container")
 
@@ -25,7 +27,7 @@ eventHub.addEventListener("click", e => {
                     document.querySelector(".auth--register").innerHTML = ""
 
                     // print the page
-                    Nutshell()
+                    nutshellRender()
                 } else {
                     window.alert("User does not exist! 😭 Please register.")
                 }
