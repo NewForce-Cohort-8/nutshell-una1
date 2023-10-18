@@ -1,6 +1,20 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { fetchMessages } from "./dataAccess.js"
+
+
+//Kari added fetching the data from the messages section of the api and storing it in an application state before converting the data structures to HTML representation
+const mainContainer = document.querySelector(".dashboard")
+
+export const nutshellRender = () => {
+
+    fetchMessages().then(
+        () => {
+            mainContainer.innerHTML = Nutshell()
+        }
+    )
+}
 
 
 /*
@@ -14,9 +28,11 @@ import { Nutshell } from "./Nutshell.js"
 
 const activeUser = sessionStorage.getItem("activeUser")
 
-if(!activeUser){
+if (!activeUser) {
     LoginForm()
     RegisterForm()
 } else {
-    Nutshell()
+    nutshellRender()
 }
+
+
