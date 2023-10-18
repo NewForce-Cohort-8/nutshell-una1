@@ -50,3 +50,45 @@ export const deleteNewsPost = (id) => {
             }
         )
 } */
+
+////////tasks
+export const fetchTask = () => {
+    return fetch(`${API}/tasks`)
+        .then(response => response.json())
+        .then(
+            (task) => {
+                // Store the external state in application state
+                applicationState.tasks = task
+            }
+        )
+}
+
+export const sendRequest = (userServiceRequest) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userServiceRequest)
+    }
+
+
+    return fetch(`${API}/tasks`, fetchOptions)
+        .then(task => task.json())
+        .then(() => {
+            document.querySelector(".dashboard").dispatchEvent(new CustomEvent("stateChanged"))
+        })
+}
+
+export const deleteRequest = (id) => {
+    return fetch(`${API}/tasks/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
+
+export let getTask= () => {
+    return applicationState.tasks.map(x => ({...x}))
+}
