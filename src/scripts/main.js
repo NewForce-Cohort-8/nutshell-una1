@@ -1,8 +1,18 @@
 import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
+import { fetchNews } from "./dataAccess.js"
 
+const mainContainer = document.querySelector(".dashboard")
 
+export const nutshellRender = () => {
+    fetchNews()
+    .then(
+        () => {
+            mainContainer.innerHTML = Nutshell()
+        }
+    )
+}
 /*
     1. Check if the user is authenticated by looking in session storage for `activeUser`
     2. If so, render the Nutshell component
@@ -18,5 +28,5 @@ if(!activeUser){
     LoginForm()
     RegisterForm()
 } else {
-    Nutshell()
+    nutshellRender()
 }
