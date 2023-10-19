@@ -51,7 +51,7 @@ export const deleteNewsPost = (id) => {
         )
 } */
 
-//////// start of tasks
+//////// /////////////////////////////////////////////////////////////////////////////////start of tasks
 export const fetchTask = () => {
     return fetch(`${API}/tasks`)
         .then(response => response.json())
@@ -92,4 +92,4 @@ export const deleteRequest = (id) => {
 export let getTask= () => {
     return applicationState.tasks.map(x => ({...x}))
 }
-////End of taks
+////////////////////////////////////////////////////////////////////////////////////////////End of taks
