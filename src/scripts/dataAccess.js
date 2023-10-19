@@ -63,6 +63,8 @@ export const fetchTask = () => {
         )
 }
 
+
+
 export const sendRequest = (userServiceRequest) => {
     const fetchOptions = {
         method: "POST",
@@ -93,3 +95,41 @@ export let getTask= () => {
     return applicationState.tasks.map(x => ({...x}))
 }
 ////////////////////////////////////////////////////////////////////////////////////////////End of taks
+
+export const fetchMessage = () => {
+    return fetch(`${API}/messages`)
+        .then(response => response.json())
+        .then(
+            (messages) => {
+                // Store the external state in application state
+                applicationState.messages = messages
+            }
+        )
+}
+
+export const sendMessages = (userServiceRequest) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userServiceRequest)
+    }
+    return fetch(`${API}/messages`, fetchOptions)
+    .then(message => message.json())
+    .then(() => {
+        document.querySelector(".dashboard").dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+export const deleteMessage = (id) => {
+    return fetch(`${API}/messages/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+            }
+        )
+}
+export let getMessages= () => {
+    return applicationState.messages.map(x => ({...x}))
+}
