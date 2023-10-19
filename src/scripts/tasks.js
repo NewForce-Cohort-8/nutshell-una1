@@ -7,7 +7,7 @@ export let Tasks = () => {
     let tasks = getTask()
 
     let html = 
-    `<button id="newTaskBtn">New Task</button>
+    `
         ${TaskForm()} 
             <ul>
                 ${tasks.map(task => `<li>${task.task} by ${task.neededBy}

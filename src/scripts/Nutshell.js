@@ -10,7 +10,7 @@ export const Nutshell = () => {
                 <button id="button"> New Article </button>    
                 <div id="button"> ${NewsForm()}</div>
                 <hr>              
-                
+                <button id="newTaskBtn">New Task</button>
                                   ${Tasks()}
                                   
                 <hr>

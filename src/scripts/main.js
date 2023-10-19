@@ -9,6 +9,7 @@ import { deleteRequest } from "./dataAccess.js";
 
 const mainContainer = document.querySelector(".dashboard")
 
+
 export const nutshellRender = () => {
     fetchNews()
     .then(
@@ -54,3 +55,8 @@ if(!activeUser){
     nutshellRender()
     nutshellTaskrender()//task
 }
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "newTaskBtn") {
+        const taskForm = document.querySelector(".task-form");
+        taskForm.style.display = (taskForm.style.display === "none") ? "block" : "none";
+    }})
