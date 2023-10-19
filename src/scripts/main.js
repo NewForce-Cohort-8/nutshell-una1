@@ -35,7 +35,9 @@ export const nutshellTaskrender = () => {
 export const nutshellMessagerender = () => {
     fetchMessage().then(
         () => {
+            // alert('before nutshell')
             mainContainer.innerHTML = Nutshell()
+            // alert('after nutshell')
         }
     )
 }
@@ -43,7 +45,10 @@ export const nutshellMessagerender = () => {
 mainContainer.addEventListener(//statechanged listener for Task
     "stateChanged",
     customEvent => {
-        // render()
+        // alert('i caught the state changed event')
+        nutshellRender()
+        nutshellTaskrender()////////////added render function for tasks//////////////////////////////////////////////////////////
+        nutshellMessagerender()
     }
 )
 mainContainer.addEventListener("click", clickEvent => {//////////////////// reveal forms for Task
@@ -68,7 +73,9 @@ mainContainer.addEventListener("click", clickEvent => {//////////////////// reve
     });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
-mainContainer.addEventListener("click", clickEvent => {//////////////////// reveal forms for message
+//*****************************messages
+
+mainContainer.addEventListener("click", clickEvent => {//reveal forms for message
     if (clickEvent.target.id === "newMsgBtn") {
         const messageForm = document.querySelector(".message-form");
        messageForm.style.display = (messageForm.style.display === "none") ? "block" : "none";
@@ -82,12 +89,17 @@ mainContainer.addEventListener("click", clickEvent => {//////////////////// reve
             if (changeEvent.target.checked) {
                 // Perform the same action as delete button
                 deleteMessage(parseInt(messageId));
-            }
+                // alert('start render')
+                nutshellMessagerender()
+                // alert('end render')
+                
+              }
     
             
         }
     
     });
+//*****************************end of messages
 
 
 const activeUser = sessionStorage.getItem("activeUser")

@@ -1,5 +1,6 @@
 import {  sendMessages } from "./dataAccess.js";
 
+//this returns input fields for both the user name and messages as well as a submit button for the chat
 export const MessageForm = () => { 
     let html = `
     <div class="message-form" style="display: none;"> <!-- added css styling into <div> html to hide forms -->
@@ -19,7 +20,7 @@ export const MessageForm = () => {
     return html
 }
 
-//code inside this block executes when there is a click event inside the container element.
+//this click event passes the user name and messages into the API for permanent storage
 const mainContainer = document.querySelector(".dashboard") 
 
 mainContainer.addEventListener("click", clickEvent => {

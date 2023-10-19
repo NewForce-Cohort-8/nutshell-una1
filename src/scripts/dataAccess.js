@@ -107,6 +107,7 @@ export const fetchMessage = () => {
         )
 }
 
+//sends the post request to API messages, letting other parts of the application know that the status has changed
 export const sendMessages = (userServiceRequest) => {
     const fetchOptions = {
         method: "POST",
@@ -122,14 +123,23 @@ export const sendMessages = (userServiceRequest) => {
     })
 }
 
+//function that sends a delete request to the API to let other parts of the application know the status has changed 
 export const deleteMessage = (id) => {
     return fetch(`${API}/messages/${id}`, { method: "DELETE" })
         .then(
             () => {
                 mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+                // window.location.reload();
             }
         )
 }
+
+
+
+//exports get messages and returns a new array containing the new information
 export let getMessages= () => {
-    return applicationState.messages.map(x => ({...x}))
+    // alert('getting messages from application state')
+    let m = applicationState.messages.map(x => ({...x}))
+    // alert('received messages from application state')
+    return m
 }

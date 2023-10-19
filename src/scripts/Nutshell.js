@@ -5,6 +5,7 @@ import { Tasks } from "./tasks.js";
 //////////////////////////////////////////////////////////////////////
 import { Messages } from "./messages.js";
 
+//creates the new message button and calls the messages function to return the HTML content in the messages.js module which generates the list of messages
 export const Nutshell = () => {
                        LogOutButton()
 
