@@ -8,13 +8,12 @@ export const MessageForm = () => {
             <label class="label" for="userName">User Name</label>
             <input type="text" id="userName"
             name= "userName" class="input" />
-            <button class="button" id="submitChat">Submit User Name</button>
             </div>
      
     <div class="field">
             <label class="label" for="newMessage">New Message</label>
-            <input type="text" name="newMessage" class="input" />
-            <button class="button" id="submitChat">Submit Chat</button>
+            <input type="text" id="newMessage" name="newMessage" class="input" />
+            <button class="button" id="submitMessage">Submit Chat</button>
         </div>
        `
     return html
@@ -24,10 +23,12 @@ export const MessageForm = () => {
 const mainContainer = document.querySelector(".dashboard") 
 
 mainContainer.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "submitMessage") {  
+   if (clickEvent.target.id === "submitMessage") {  
         // Gets what the user typed into the form fields
         const userName = document.querySelector("input[name='userName']").value
         const newMessage = document.querySelector("input[name='newMessage']").value
+
+        
         // Makes an object out of the user input
         const dataToSendToAPI = {
             user: userName,

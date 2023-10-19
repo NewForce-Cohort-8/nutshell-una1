@@ -81,7 +81,7 @@ mainContainer.addEventListener("click", clickEvent => {//////////////////// reve
             // Check if the checkbox is checked
             if (changeEvent.target.checked) {
                 // Perform the same action as delete button
-                deleteRequest(parseInt(messageId));
+                deleteMessage(parseInt(messageId));
             }
     
             
