@@ -55,8 +55,11 @@ export const NewsForm = () => {
         <button class="button" id="saveRequest">  Save Request  </button>
     `
  return html
+ 
 
 }
+
+
 
 /* export const NewsForm = () => {
     const form = document.createElement('form');

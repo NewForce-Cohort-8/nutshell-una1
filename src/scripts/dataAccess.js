@@ -40,7 +40,7 @@ export const sendNews = (userNews) => {
         })
 }
 
-/* // Function initiate the fetch request to delete a request must have primary key sent to it as and argument
+// Function initiate the fetch request to delete a request must have primary key sent to it as and argument
 
 export const deleteNewsPost = (id) => {
     return fetch(`${API}/news/${id}`, { method: "DELETE" })
@@ -49,4 +49,4 @@ export const deleteNewsPost = (id) => {
                 mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
             }
         )
-} */
+} 
