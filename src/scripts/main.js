@@ -28,10 +28,10 @@ export const nutshellTaskrender = () => {
     )
 }
 //////////////////////////////////////////////////////////////////////////////////////////////////  TASK 
-mainContainer.addEventListener(//statechanged listener for Task
+mainContainer.addEventListener(//statechanged listener for Task , Article
     "stateChanged",
     customEvent => {
-        // render()
+        nutshellRender()
     }
 )
 mainContainer.addEventListener("click", clickEvent => {//////////////////// reveal forms for Task
@@ -55,6 +55,17 @@ mainContainer.addEventListener("click", clickEvent => {//////////////////// reve
     
     });
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+////////// LISTENS FOR TOGGLE BUTTON ---New Article--- in Nutshell.js /////////////
+mainContainer.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "newArticleBtn") {
+        const newsForm = document.querySelector(".news-form");
+        newsForm.style.display = (newsForm.style.display === "none") ? "block" : "none";
+    }})
+
+
+
 
 const activeUser = sessionStorage.getItem("activeUser")
 

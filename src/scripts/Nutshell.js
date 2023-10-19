@@ -1,26 +1,11 @@
 import { LogOutButton } from "./auth/LogoutButton.js"
 import { NewsForm } from "./newsForm.js"
-import { News } from "../newsPost.js"
-export const Nutshell = () => {
+import { News } from "./newsPost.js"
+import { Tasks } from "./tasks.js"
 
-  
 
-  // Combine the HIML of LogOutButton and Tasks
-  LogOutButton()
-  const nutshellHTML = `
-    
-  <button id="myButton"> New Article </button>
-  
-  <div class="myButton"> 
-  ${NewsForm()}
-  </div> 
-<div>
-${News()}
-</div>
-
-  `
 //////////////////////////////////////////////////////////add task import 
-import { Tasks } from "./tasks.js";
+
 //////////////////////////////////////////////////////////////////////
 export const Nutshell = () => {
                        LogOutButton()
@@ -28,8 +13,9 @@ export const Nutshell = () => {
 
   const nutshellHTML = `
   <hr>
-                <button id="button"> New Article </button>    
+                <button id="newArticleBtn"> New Article </button>    
                 <div id="button"> ${NewsForm()}</div>
+                <div id="button"> ${News()}</div>
                 <hr>              
                 <button id="newTaskBtn">New Task</button>  <!--- //////////////////////////////added html button -->
                                   ${Tasks()}

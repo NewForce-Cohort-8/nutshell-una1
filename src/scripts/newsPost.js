@@ -1,5 +1,5 @@
- import { getNews } from "./scripts/dataAccess.js"
- import { deleteNewsPost } from "./scripts/dataAccess.js"   
+ import { getNews } from "./dataAccess.js"
+ import { deleteNewsPost } from "./dataAccess.js"   
 // Function converts request (parameter) array to HTML list items
 
 const mainContainer = document.querySelector(".dashboard")
@@ -23,6 +23,9 @@ const convertNewsToList = (news) => {
                 
                 <br>
                 URL: ${news.URL}
+                <br>
+
+                Date Posted: ${news.timestamp}
                 <br>
                 
                 <button class="news__delete"
