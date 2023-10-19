@@ -2,8 +2,13 @@ import { LoginForm } from "./auth/LoginForm.js"
 import { RegisterForm } from "./auth/RegisterForm.js"
 import { Nutshell } from "./Nutshell.js"
 import { fetchNews } from "./dataAccess.js"
+/////////////////////////////////////////////////////////////////////////////TASK imports
+import { fetchTask } from "./dataAccess.js"
+import { deleteRequest } from "./dataAccess.js";
+/////////////////////////////////////////////////////////////////////////////
 
 const mainContainer = document.querySelector(".dashboard")
+
 
 export const nutshellRender = () => {
     fetchNews()
@@ -13,14 +18,43 @@ export const nutshellRender = () => {
         }
     )
 }
-/*
-    1. Check if the user is authenticated by looking in session storage for `activeUser`
-    2. If so, render the Nutshell component
-    3. If not, render the login and registration forms
-    4. Also, if the user authenticates, and the login form is initially shown
-        ensure that the Nutshell component gets rendered
-*/
 
+//task import
+export const nutshellTaskrender = () => {
+    fetchTask().then(
+        () => {
+            mainContainer.innerHTML = Nutshell()
+        }
+    )
+}
+//////////////////////////////////////////////////////////////////////////////////////////////////  TASK 
+mainContainer.addEventListener(//statechanged listener for Task
+    "stateChanged",
+    customEvent => {
+        // render()
+    }
+)
+mainContainer.addEventListener("click", clickEvent => {//////////////////// reveal forms for Task
+    if (clickEvent.target.id === "newTaskBtn") {
+        const taskForm = document.querySelector(".task-form");
+        taskForm.style.display = (taskForm.style.display === "none") ? "block" : "none";
+    }})
+
+    mainContainer.addEventListener("change", changeEvent => {//////////// EventListener on check box to delete for TASK
+        if (changeEvent.target.classList.contains("task-checkbox")) {
+            const taskId = changeEvent.target.id.split("--")[1];
+            
+            // Check if the checkbox is checked
+            if (changeEvent.target.checked) {
+                // Perform the same action as delete button
+                deleteRequest(parseInt(taskId));
+            }
+    
+            
+        }
+    
+    });
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 const activeUser = sessionStorage.getItem("activeUser")
 
@@ -29,4 +63,5 @@ if(!activeUser){
     RegisterForm()
 } else {
     nutshellRender()
+    nutshellTaskrender()////////////added render function for tasks//////////////////////////////////////////////////////////
 }
