@@ -2,12 +2,16 @@ import {  sendMessages } from "./dataAccess.js";
 
 export const MessageForm = () => { 
     let html = `
+    <div class="message-form" style="display: none;"> <!-- added css styling into <div> html to hide forms -->
+
     <div class="field">
             <label class="label" for="userName">User Name</label>
-            <input type="text" id="userName" class="input" />
-            <button class="button" id="submitUser">Submit User</button>
-        </div>
-        <div class="field">
+            <input type="text" id="userName"
+            name= "userName" class="input" />
+            <button class="button" id="submitChat">Submit User Name</button>
+            </div>
+     
+    <div class="field">
             <label class="label" for="newMessage">New Message</label>
             <input type="text" name="newMessage" class="input" />
             <button class="button" id="submitChat">Submit Chat</button>
