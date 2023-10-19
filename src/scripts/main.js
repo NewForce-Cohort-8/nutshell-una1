@@ -18,7 +18,7 @@ export const nutshellRender = () => {
     )
 }
 
-
+//task import
 export const nutshellTaskrender = () => {
     fetchTask().then(
         () => {
@@ -28,23 +28,16 @@ export const nutshellTaskrender = () => {
 }
 
 
-
+//task statechanged listener
 mainContainer.addEventListener(
     "stateChanged",
     customEvent => {
-        render()
+        // render()
     }
 )
 // nutshellTaskrender()
 
-/*
-    1. Check if the user is authenticated by looking in session storage for `activeUser`
-    2. If so, render the Nutshell component
-    3. If not, render the login and registration forms
-    4. Also, if the user authenticates, and the login form is initially shown
-        ensure that the Nutshell component gets rendered
-*/
-mainContainer.addEventListener("click", click => {
+mainContainer.addEventListener("click", click => {// task delete button 
     if (click.target.id.startsWith("request--")) {
         const [,requestId] = click.target.id.split("--")
         deleteRequest(parseInt(requestId))
@@ -59,5 +52,5 @@ if(!activeUser){
     RegisterForm()
 } else {
     nutshellRender()
-    nutshellTaskrender()
+    nutshellTaskrender()//task
 }

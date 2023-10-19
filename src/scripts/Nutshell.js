@@ -1,22 +1,21 @@
 import { LogOutButton } from "./auth/LogoutButton.js"
 import { NewsForm } from "./newsForm.js"
-import { Tasks } from "./tasks.js";
+import { Tasks } from "./tasks.js";//add task
 
 export const Nutshell = () => {
-  // Combine the HIML of LogOutButton and Tasks
-  LogOutButton()
+                       LogOutButton()
+
+
   const nutshellHTML = `
-    
-  <button id="button"> New Article </button>    
-  
-  <div id="button"> 
-  ${NewsForm()}
-  </div> 
-  <hr>
-    ${Tasks()}
+                <button id="button"> New Article </button>    
+                <div id="button"> ${NewsForm()}</div>
+                <hr>              
+                
+                                  ${Tasks()}
+                                  
+                <hr>
 
-
-  `
+                        `
   return nutshellHTML 
   
   
