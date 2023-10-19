@@ -98,4 +98,5 @@ if(!activeUser){
 } else {
     nutshellRender()
     nutshellTaskrender()////////////added render function for tasks//////////////////////////////////////////////////////////
+    nutshellMessagerender()
 }
