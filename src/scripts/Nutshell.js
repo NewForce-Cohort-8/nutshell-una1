@@ -4,25 +4,33 @@ import { News } from "./newsPost.js"
 import { Tasks } from "./tasks.js"
 
 
-//////////////////////////////////////////////////////////add task import 
-
-//////////////////////////////////////////////////////////////////////
 export const Nutshell = () => {
-                       LogOutButton()
-
+                      
+  LogOutButton()
 
   const nutshellHTML = `
   <hr>
-                <button id="newArticleBtn"> New Article </button>    
-                <div id="button"> ${NewsForm()}</div>
-                <div id="button"> ${News()}</div>
-                <hr>              
-                <button id="newTaskBtn">New Task</button>  <!--- //////////////////////////////added html button -->
-                                  ${Tasks()}
-                                  
-  <hr>
+                <section class ="news__feature">
+
+                            <button id="newArticleBtn"> New Article </button>    
+                                                ${NewsForm()}
+                                                ${News()}
+                </section>
+
+<hr>
+                <section class= "task__feature">
+
+                              <button id="newTaskBtn">New Task</button> 
+                                                ${Tasks()}
+                </section
+                
+                <section class= "message__feature">
+
+                              <button id="newTaskBtn">New Message</button>                                             
+              </section
 
                         `
+                        
   return nutshellHTML 
   
   
