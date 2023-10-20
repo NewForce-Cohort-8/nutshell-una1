@@ -64,6 +64,8 @@ export const fetchTask = () => {
         )
 }
 
+
+
 export const sendRequest = (userServiceRequest) => {
     const fetchOptions = {
         method: "POST",
@@ -94,3 +96,51 @@ export let getTask= () => {
     return applicationState.tasks.map(x => ({...x}))
 }
 ////////////////////////////////////////////////////////////////////////////////////////////End of taks
+
+export const fetchMessage = () => {
+    return fetch(`${API}/messages`)
+        .then(response => response.json())
+        .then(
+            (messages) => {
+                // Store the external state in application state
+                applicationState.messages = messages
+            }
+        )
+}
+
+//sends the post request to API messages, letting other parts of the application know that the status has changed
+export const sendMessages = (userServiceRequest) => {
+    const fetchOptions = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(userServiceRequest)
+    }
+    return fetch(`${API}/messages`, fetchOptions)
+    .then(message => message.json())
+    .then(() => {
+        document.querySelector(".dashboard").dispatchEvent(new CustomEvent("stateChanged"))
+    })
+}
+
+//function that sends a delete request to the API to let other parts of the application know the status has changed 
+export const deleteMessage = (id) => {
+    return fetch(`${API}/messages/${id}`, { method: "DELETE" })
+        .then(
+            () => {
+                mainContainer.dispatchEvent(new CustomEvent("stateChanged"))
+                // window.location.reload();
+            }
+        )
+}
+
+
+
+//exports get messages and returns a new array containing the new information
+export let getMessages= () => {
+    // alert('getting messages from application state')
+    let m = applicationState.messages.map(x => ({...x}))
+    // alert('received messages from application state')
+    return m
+}
