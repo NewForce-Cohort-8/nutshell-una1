@@ -5,7 +5,7 @@ export let Messages = () => {
   let messages = getMessages();
 
   let html = `
-    ${MessageForm()}  
+   
     <div id="chat-container">
         <ul>
             ${messages
@@ -25,6 +25,7 @@ export let Messages = () => {
               .join("")}
         </ul>
     </div>
+    ${MessageForm()}  
   `;
 
   // Scroll to the bottom of the chat container
