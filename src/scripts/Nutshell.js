@@ -1,7 +1,11 @@
 import { LogOutButton } from "./auth/LogoutButton.js"
 import { NewsForm } from "./newsForm.js"
+import { News } from "./newsPost.js"
+import { Tasks } from "./tasks.js"
+
+
 //////////////////////////////////////////////////////////add task import 
-import { Tasks } from "./tasks.js";
+
 //////////////////////////////////////////////////////////////////////
 export const Nutshell = () => {
                        LogOutButton()
@@ -9,8 +13,9 @@ export const Nutshell = () => {
 
   const nutshellHTML = `
   <hr>
-                <button id="button"> New Article </button>    
+                <button id="newArticleBtn"> New Article </button>    
                 <div id="button"> ${NewsForm()}</div>
+                <div id="button"> ${News()}</div>
                 <hr>              
                 <button id="newTaskBtn">New Task</button>  <!--- //////////////////////////////added html button -->
                                   ${Tasks()}
