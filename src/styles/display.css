@@ -1,0 +1,12 @@
+body,
+.feature,
+input,
+select,
+textarea {
+    color: #404040;
+	font-family: "Comfortaa", Arial, sans-serif;
+	line-height: 1.5;
+    background: linear-gradient(45deg, #f0f2f4, #002aff); 
+    background-size: 200% 200%;
+    
+}

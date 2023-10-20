@@ -11,12 +11,12 @@ export let Tasks = () => {
         ${TaskForm()}  <!--i added taskForm -->
             <ul>
             ${tasks.map(task => `
-            <li>
+            
                 <input type="checkbox" id="task--${task.id}" class="task-checkbox">
-                <label for="task--${task.id}">
+                <label class="task-label" for="task--${task.id}">
                     ${task.task} by ${task.neededBy}
                 </label>
-            </li>`).join("")}
+            `).join("")}
             </ul>
       `
     return html

@@ -1,0 +1,25 @@
+@import "display.css";
+.action-button {
+    background-color: #1df241; 
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.action-button:hover {
+    background-color: #1478AD; /* Slightly darker blue on hover */
+}
+
+/* Styling for feature sections */
+.feature {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Subtle shadow effect */
+}
+
+/* Additional styling for elements within features can be added here */
