@@ -1,5 +1,6 @@
+
 import { getMessages } from "./dataAccess.js";
-import { MessageForm } from "./messageForm.js";
+import { MessageForm } from "./MessageForm.js";
 
 export let Messages = () => {
   let messages = getMessages();

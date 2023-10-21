@@ -14,6 +14,12 @@ const mainContainer = document.querySelector(".dashboard")
 export const getNews = () => {
     return applicationState.news.map(news => ({...news}))
 }
+export let getMessages= () => {
+    // alert('getting messages from application state')
+    return applicationState.messages.map(x => ({...x}))
+    // alert('received messages from application state')
+    
+}
 
 export const fetchNews = () => {
     return fetch(`${API}/news`)
@@ -138,9 +144,3 @@ export const deleteMessage = (id) => {
 
 
 //exports get messages and returns a new array containing the new information
-export let getMessages= () => {
-    // alert('getting messages from application state')
-    let m = applicationState.messages.map(x => ({...x}))
-    // alert('received messages from application state')
-    return m
-}
