@@ -1,4 +1,3 @@
-
 import {  sendMessages } from "./dataAccess.js";
 
 //this returns input fields for both the user name and messages as well as a submit button for the chat
@@ -40,3 +39,6 @@ mainContainer.addEventListener("click", clickEvent => {
         sendMessages(dataToSendToAPI)
     }
 })
+
+
+

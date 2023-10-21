@@ -1,4 +1,4 @@
-import { getNews } from "./dataAccess.js"
+ import { getNews } from "./dataAccess.js"
  import { deleteNewsPost } from "./dataAccess.js"   
 // Function converts request (parameter) array to HTML list items
 
@@ -54,3 +54,5 @@ export const News = () => {
 
     return html
 }
+
+

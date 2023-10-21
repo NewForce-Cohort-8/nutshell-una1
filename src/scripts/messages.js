@@ -58,3 +58,79 @@ export let Messages = () => {
 
   return html;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//before like and dislike was added
+// import { getMessages } from "./dataAccess.js";
+// import { MessageForm } from "./messageForm.js"; // check this
+
+// // generates the HTML list of messages when you enter user and new message
+// export let Messages = () => {
+//   let messages = getMessages(); // calls get messages function to retrieve list of messages
+
+//   let html = `
+//     ${MessageForm()}  
+//     <div id="chat-container">
+//         <ul>
+//             ${messages
+//               .map(
+//                 (message) => `
+//                   <li>
+//                       <input type="checkbox" id="message--${message.id}" class="message-checkbox">
+//                       <label for="message--${message.id}">
+//                           ${message.user}, ${message.message}
+//                       </label>
+//                   </li>`
+//               )
+//               .join("")}
+//         </ul>
+//     </div>
+//   `;
+
+//   // Scroll to the bottom of the chat container
+//   setTimeout(() => {
+//     let chatContainer = document.getElementById("chat-container");
+//     chatContainer.scrollTop = chatContainer.scrollHeight;
+//   }, 0);
+
+//   return html;
+// };
+
+
+
+
+
+
+
+
+
+

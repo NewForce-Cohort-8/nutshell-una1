@@ -70,6 +70,8 @@ export const fetchTask = () => {
         )
 }
 
+
+
 export const sendRequest = (userServiceRequest) => {
     const fetchOptions = {
         method: "POST",
@@ -99,7 +101,8 @@ export const deleteRequest = (id) => {
 export let getTask= () => {
     return applicationState.tasks.map(x => ({...x}))
 }
-////////////////////////////////////////
+////////////////////////////////////////////////////////////////////////////////////////////End of taks
+
 export const fetchMessage = () => {
     return fetch(`${API}/messages`)
         .then(response => response.json())
